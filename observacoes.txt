@@ -1,0 +1,26 @@
+dependencias geradas pelo poetry
+poetry shell inicia a shell com flask
+
+
+para rodar as variáveis de ambiente
+$env:FLASK_APP = "hello.py"
+$env:FLASK_ENV = "development"
+
+
+o que o sistema faz?
+recebe uma requisição get na raiz e exibe um campo de texto para cadastrar uma url
+
+ao cadastrar a url, o sistema envia o form via post:
+
+    salva essa url-longa
+    cria uma url-curta
+    devolve a url-curta para o usuário armazenar
+
+uma segunda rota recebendo a url faz a conversão da url curta para longa e ja encaminha o usuário
+
+
+banco de dados em sqlite
+
+estrutura da tabela
+    url-curta
+    url-longa
