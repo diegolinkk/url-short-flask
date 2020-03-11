@@ -3,7 +3,7 @@ poetry shell inicia a shell com flask
 
 
 para rodar as variáveis de ambiente
-$env:FLASK_APP = "hello.py"
+$env:FLASK_APP = "./app/app.py"
 $env:FLASK_ENV = "development"
 
 
@@ -24,3 +24,10 @@ banco de dados em sqlite
 estrutura da tabela
     url-curta
     url-longa
+
+Pendencias (backlog)
+    criar base de dados
+    gerar a url curta
+    salvar
+    devolver a url curta
+    encaminhar para url longa recebendo url curta
