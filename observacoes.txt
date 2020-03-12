@@ -26,8 +26,10 @@ estrutura da tabela
     url-longa
 
 Pendencias (backlog)
-    criar base de dados
-    gerar a url curta
+    criar base de dados - fazer em cima da model e com sqlite3
     salvar
     devolver a url curta
     encaminhar para url longa recebendo url curta
+
+feito
+    gerar a url curta - ok dentro da funções
