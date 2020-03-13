@@ -6,7 +6,10 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        return f"Você digitou {request.form['url-longa']} no formulário "
+        s = Site(request.form['url-longa'])
+        s.cadastrar()
+        return f"Sua url curta é: {s.url_curta}"
+
     return render_template("base.html")
 
 
@@ -15,7 +18,3 @@ def index():
 @app.route('/<url>')
 def encaminhar(url):
     return f"A url digitada foi {url}"
-
-
-site1 = Site()
-print(site1)
