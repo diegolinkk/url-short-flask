@@ -21,9 +21,19 @@ class Site:
         conn.close()
 
     def recuperar_url_longa(self):
-            #faz a busca no banco com a url curta
-            #retorna sua respectiva url longai
-            pass
+        conn = sqlite3.connect(self.banco_de_dados)
+        cursor = conn.cursor()
+        cursor.execute(f"""
+        select url_longa from sites where url_curta like "{self.url_curta}";
+        """)
+        self.url_longa = cursor.fetchone()
+        #se não for tupla, é um Nonetype
+        if isinstance(self.url_longa,tuple):
+            self.url_longa = self.url_longa[0]
+        #pra não ficar nonetype, vira uma string normal
+        else:
+            self.url_longa = ""
+        conn.close()
 
     def __str__(self):
             return f"Url curta: {self.url_curta}. Url longa {self.url_longa}"
