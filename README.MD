@@ -2,20 +2,29 @@
 
 encurtador de URL feito em flask para fins didáticos
 
-## Gerenciador de pacotes
-O sistema está usando o gerenciador de pacotes [poetry](https://python-poetry.org/)
+## Virtualenv
+O sistema está usando o virtualenv para gerenciar pacotes e isolar ambientes [virtualenv](https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais)
 
 ## Para executar esse programa em computador local
 
-### 1 Instale o poetry
-Para instalar o poetry, siga as instruções de instalação no site.
+### 1 Inicialize uma virtualenv
+Na raiz do projeto, devemos instalar e executar a virtualenv
+
+Inicializando a virtualenv em Linux
+```
+python3 -m venv venv #instala uma virtualenv
+source /venv/bin/activate #inicializa a virtualenv
+```
+Inicializando em Windows - Powershell
+```
+python -m venv venv
+\venv\Scripts\Activate.ps1
+```
 
 ### 2 Instale as dependências do projeto
-Já com o Poetry instalado, na raiz do projeto, digite:
+Dentro do ambiente da virtualenv, devemos instalar as dependências:
 ```
-poetry check #verifica se está tudo ok
-poetry install #instala as dependências
-poetry shell #inicia a virtual env do projeto
+pip install -r requirements.txt #instala as dependências
 ```
 
 ### 3 Configure as variáveis de ambiente
